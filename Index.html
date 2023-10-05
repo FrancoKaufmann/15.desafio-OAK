@@ -18,9 +18,12 @@
 </head>
 <body>
 
+    <!-- Cabeçalho -->
     <header>
+        <!-- container -->
         <div class="container">
             <nav class="navbar bg-white">
+                <!-- container da img -->
                 <div class="container">
                   <a class="navbar-brand" href="#">
                     <img src="/src/img/Oak Tecnologia.jpeg" alt="Bootstrap" width="80">
@@ -31,13 +34,18 @@
         </div>
     </header>
 
-    <section class="container p-5">
+    <!-- formulario -->
+    <section class="container p-5" id="form">
+
+        <!-- container do formulario -->
         <div class="d-flex justify-content-center flex-column bg-degrade p-5 rounded-4">
+            <!-- titulo -->
             <div class="text-center text-white align-items-center mb-5">
                 <h1 class="font-urbanis fw-bold">Cadastre seu produto aqui</h1>
             </div>
 
-            <form class="">
+            <!-- inputs do formulario -->
+            <form>
                 <div class="form-group mb-3">
                     <label for="nomeProduto" class="form-label text-white">Nome do produto</label>
                     <input type="text" class="form-control bg-input" id="nomeProduto" required maxlength=100>
@@ -53,6 +61,7 @@
                     <input type="text" class="form-control bg-input" id="dsProduto">
                 </div>
 
+                <!-- Input sim ou não -->
                 <div class="mb-5">
                     <p class="text-white">Disponivel para venda ?</p>
                     <div class="form-check">
@@ -66,13 +75,16 @@
                     </div>        
                 </div>
 
-                <button class="btn btn-light btn-lg text-white" id="enviar">Enviar</button>
+                <button class="btn btn-light btn-lg text-white" id="enviar">Cadastrar</button>
             </form>
         </div>  
     </section>
 
+    <!-- Planilha -->
     <section class="container p-5 bg ">
         <div class="row">
+
+            <!-- Titulos da planilha -->
             <table class="table table-striped col" id="table">
                 <tr>
                     <th scope="col">
@@ -90,12 +102,17 @@
                 </tr>  
             </table>
 
+            <!-- Botoes ao lado -->
             <div  class="col-3 text-center bg pt-2">
-                <button class="btn btn-dark text-white" id ="ordenar">Ordenar</button>
-                <button class="btn btn-dark text-white">Novo Produto</button>
+                <button class="btn btn-dark text-white" id ="ordenar"><i class="fa-solid fa-arrow-up-short-wide"></i>Ordenar</button>
+                <a href="#form" class="btn btn-dark text-white" id="newProduct"><i class="fa-solid fa-plus"></i>Novo Produto</a>
             </div>
         </div>
     </section>
+
+    <footer>
+
+    </footer>
 
    <!-- Bootstrap JavaScript Libraries -->
    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"

@@ -1,18 +1,24 @@
-
+/* Fontes */
  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Urbanist:wght@300;500;600;700;800&display=swap');
  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Roboto:wght@400;500;700;900&display=swap');
 
+ /* fonte padrão */
 .body {
     font-family: 'Open Sans';
 }
+
+/* fonte para destaque */
  .font-urbanis {
     font-family: 'Urbanist', 'Open Sans';
  }
 
+ /* -----FORMULARIO---- */
+ /* fundos degrade */
 .bg-degrade {
     background: linear-gradient(98deg, #47B368 24.41%, #1C8894 98.54%);
 }
 
+/* botão do formulariio */
 .bg-input {
     background: rgba(255, 255, 255, 0.21);
 }
@@ -20,7 +26,7 @@
 .btn-lg {
     --bs-btn-bg: rgba(30, 35, 38, 0.60);
     --bs-btn-border-color: none;
-    --bs-btn-hover-bg: #e0dfdf;
+    --bs-btn-hover-bg: #173b22;
 }
 
 .btn-group-lg>.btn, .btn-lg {
@@ -31,6 +37,7 @@
 
 }
 
+/* input */
 .form-control {
     border: none;
     border-radius: 0.1rem;
@@ -42,6 +49,8 @@
     background-color: rgba(255, 255, 255, 0.21);
     border: none;
 }
+
+/* -----PLANILHA------- */
 
 td {
     text-align: center;
@@ -57,6 +66,7 @@ tr:hover {
     transition: all 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
+/* Simbulo de dinheiro */
 table {
     z-index: 0;
     position: relative;
@@ -70,7 +80,7 @@ table {
     content: 'R$';
     position: absolute;
     z-index: 1;
-    left: 270px;
+    left: 40%;
     font-size: 1.3rem;
     
 }
@@ -78,4 +88,9 @@ table {
 .bg {
     background-color: #f1f1f1;
     margin-bottom: 1rem;
+}
+
+.fa-solid {
+    color: #47B368;
+    padding: 5px;
 }

@@ -1,35 +1,45 @@
+// Constantes das principais funçoes
 const form = document.querySelector('form');
+const order = document.querySelector('#ordenar');
 
-let vendaSim = document.querySelector('#radioS');
-let vendaNao = document.querySelector('#radioN');
+// função principal
+form.addEventListener('submit', receiveform)
+function receiveform(e) {
 
-const ordenar = document.querySelector('#ordenar');
+    // bloqueia o envio do formulario
+    e.preventDefault();
 
-form.addEventListener('submit', recebeform)
-function recebeform(e) {
-        e.preventDefault();
 
         let table = document.querySelector("table");
-        const nomeProduto = document.querySelector('#nomeProduto');
-        const valorProduto = document.querySelector('#valorProduto');
+
+        // Inputs
+        const nameProduct = document.querySelector('#nomeProduto');
+        const valueProduct = document.querySelector('#valorProduto');
+        let yes = document.querySelector('#radioS')
+        let no = document.querySelector('#radioN')
+
+        // criando nova tr
         let tr = document.createElement('tr');
 
-        function pegaNome() {
-            let tdProduto = document.createElement('td');
-            let produto = nomeProduto.value;
-            tdProduto.textContent = produto;
-            return tdProduto;
-        }
+    // inserindo input em td (nome)
+    function getName() {
+            let tdProduct = document.createElement('td');
+            let product = nameProduct.value;
+            tdProduct.textContent = product;
+            return tdProduct;
+    }
 
-        function pegaValor () {
-            let tdValor = document.createElement('td');
-            let valor = valorProduto.value;
-            tdValor.textContent = valor;
-            return tdValor;
+    // inserindo input em td (valor)
+    function getValue () {
+            let tdValue = document.createElement('td');
+            let value = valueProduct.value;
+            tdValue.textContent = value;
+            return tdValue;
 
-        }
+    }
 
-        function pegaSim () {
+    // inserindo input em td (sim/não)
+    function getBoolean () {
             if (form.radiosn.value == 'Não') {
                 let tdN = document.createElement('td');
                 let N = form.radiosn.value;
@@ -41,39 +51,47 @@ function recebeform(e) {
                 tdS.textContent = S;
                 return tdS;
             }
-        }
+    }
 
-        function limpaInput () {
-            nomeProduto.value = '';
-            valorProduto.value = '';
-            vendaNao.checked = false;
-            vendaSim.checked = false;
-            nomeProduto.focus()
-        }
+    // limpar input
+    function clearInput () {
+            nameProduct.value = '';
+            valueProduct.value = '';
+            yes.checked = false;
+            no.checked = false;
+            nameProduct.focus()
+    }
 
-        tdProduto = pegaNome();
-        tr.appendChild(tdProduto);
+    // Inserindo tds em trs
+    tdProduct = getName();
+    tr.appendChild(tdProduct);
 
-        tdValor = pegaValor();
-        tr.appendChild(tdValor);
+    tdValue = getValue();
+    tr.appendChild(tdValue);
 
-        tdSim = pegaSim()
-        tr.appendChild(tdSim);
+    tdBoolean = getBoolean()
+    tr.appendChild(tdBoolean);
 
-        tr.classList = "Newtr"
-        table.appendChild(tr);
+    // add class a tr
+    tr.classList = "Newtr"
 
-        limpaInput()
-        table.scrollIntoView({ behavior: "smooth" });
+    //inrerindo trs na tabela 
+    table.appendChild(tr);
 
+    // limpando depois do envio
+    clearInput();
+
+    // scrool para as novas trs
+    table.scrollIntoView({ behavior: "smooth" });
 }
 
-ordenar.addEventListener('click', function() {
+// função ordenar
+order.addEventListener('click', function() {
         let table = document.querySelector("table");
-        let linhas = Array.from(table.getElementsByTagName("tr"));
+        let tr = Array.from(table.getElementsByTagName("tr"));
 
         // Ordena as linhas com base no valor da segunda célula
-        linhas.sort(function(a, b) {
+        tr.sort(function(a, b) {
             var A = parseInt(a.cells[1].textContent);
             var B = parseInt(b.cells[1].textContent);
             return A - B;
@@ -85,7 +103,7 @@ ordenar.addEventListener('click', function() {
         }
 
         // Adiciona as linhas ordenadas de volta à tabela
-        linhas.forEach(function(row) {
+        tr.forEach(function(row) {
             table.appendChild(row);
         });
 })
